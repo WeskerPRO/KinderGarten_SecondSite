@@ -1,0 +1,94 @@
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+                    <div class="footer-info">
+                        <img src="{% static 'style/img/Toy.png' %}" class="img-fluid" alt="">
+                        <br>
+                        <br>
+                        <h3>Kontakt</h3>
+                        <p>
+                            {{ AboutContact.location|default:"-" }}<br><br>
+                            <strong>Telefon raqam:</strong> {{ AboutContact.contact_num|default:"-" }}<br>
+                            <strong>Email po'chta:</strong> {{ AboutContact.email|default:"-" }}<br>
+                        </p>
+                        <div class="social-links mt-3">
+                            {% if AboutContact.twitter is not None %}
+                                <a href="{{ AboutContact.twitter }}" target="_blank" class="twitter"><i
+                                        class="bx bxl-twitter"></i></a>
+                            {% endif %}
+
+                            {% if AboutContact.facebook is not None %}
+                                <a href="{{ AboutContact.facebook }}" target="_blank" class="facebook"><i
+                                        class="bx bxl-facebook"></i></a>
+                            {% endif %}
+
+                            {% if AboutContact.instagram is not None %}
+                                <a href="{{ AboutContact.instagram }}" target="_blank" class="instagram"><i
+                                        class="bx bxl-instagram"></i></a>
+                            {% endif %}
+
+                            {% if AboutContact.skype is not None %}
+                                <a href="{{ AboutContact.skype }}" target="_blank" class="google-plus"><i
+                                        class="bx bxl-skype"></i></a>
+                            {% endif %}
+
+                            {% if AboutContact.linkedin_box is not None %}
+                                <a href="{{ AboutContact.linkedin_box }}" target="_blank" class="linkedin"><i
+                                        class="bx bxl-linkedin"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+                    <div class="link-info">
+                        <div class="icon"><i class="bx bi-link-45deg"></i></div>
+                        <h4>Foydali linklar</h4>
+
+                        <div class="{% if request.path == '/' %}active-icon{% else %}disactive-icon{% endif %}">
+                            <i class="bx bi-toggle-on"></i>
+                            <strong><a href="{% if request.path == '/' %}#about{% else %}{% url 'about' %}{% endif %}">Bosh sahifa</a></strong>
+                        </div>
+                        <br>
+
+                        <div class="{% if request.path == '/staff/' %}active-icon{% else %}disactive-icon{% endif %}">
+                            <i class="bx bi-toggle-off"></i>
+                            <a href="{% if request.path == '/staff/' %}#team{% else %}{% url 'staff' %}{% endif %}">Hodimlar</a>
+                        </div>
+                        <br>
+
+                        <div class="{% if request.path == '/news/' %}active-icon{% else %}disactive-icon{% endif %}">
+                            <i class="bx bi-toggle-off"></i>
+                            <a href="{% if request.path == '/news/' %}#news{% else %}{% url 'news' %}"{% endif %}>Yangiliklar</a>
+                        </div>
+                        <br>
+
+                        <div class="{% if request.path == '/galary/' %}active-icon{% else %}disactive-icon{% endif %}">
+                            <i class="bx bi-toggle-off"></i>
+                            <a href="{% if request.path == '/galary/' %}#portfolio{% else %}{% url 'galary' %}{% endif %}">Gallereya</a>
+                        </div>
+                        <br>
+
+                        <div class="{% if request.path == '/contact/' %}active-icon{% else %}disactive-icon{% endif %}">
+                            <i class="bx bi-toggle-off"></i>
+                            <a href="{% if request.path == '/contact/' %}#footer{% else %}{% url 'contact' %}{% endif %}">Kontakt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="background-color: rgba(0, 0, 0, 0.88)">
+        <div class="my-2 text-center" style="border-top: 1px solid #262626;"></div>
+        <div class="text-center" style="font-size: 20px;color: rgba(231, 228, 228, 0.925);">
+            The site is designed by student <strong>Bakhodriov Shakhzod</strong> in <strong><a
+                href="https://ba.uz/uz/"
+                target="_blank"
+                style="color:rgba(231, 228, 228, 0.925);text-decoration: none;">NAPA
+            Team</a></strong>
+        </div>
+    </div>
+</footer><!-- End Footer -->

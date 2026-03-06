@@ -1,0 +1,8 @@
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <h1>{{ Banner.title|default:"-" }}</h1>
+        {% if Banner.message is not None %}
+            <h2>{{ Banner.message }}</h2>
+        {% endif %}
+    </div>
+</section><!-- End Hero -->

@@ -1,0 +1,27 @@
+<section id="news" class="news">  <!--Yangiliklar-->
+    <div class="container">
+        <div class="section-title">
+            <span>Yangiliklar</span>
+            <h2>Yangiliklar</h2>
+            <p>Bu yerda barcha bog'chadagi yangiliklar guvohi bo'lishingiz mumkin</p>
+        </div>
+
+        <div class="row">
+            {% for EachNews in News %}
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                    <div class="icon-box">
+                        <img src="{{ EachNews.image.url }}" class="img-thumbnail" alt=""
+                                style="height: 300px">
+                        <h4>{{ EachNews.title|default:"-" }}</h4>
+                        <p>{{ EachNews.message|default:"-" }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="text-position" data-aos="fade-right" data-aos-delay="100">
+                    <p>Ayni damda hech qanday yangilik yo'q</p>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section><!-- End Services Section -->

@@ -1,0 +1,31 @@
+<section id="portfolio" class="portfolio"> <!--Rasmlar-->
+    <div class="container">
+        <div class="section-title">
+            <span>Gallereya</span>
+            <h2>Gallereya</h2>
+            <p>Bu yerda barcha foto va rasmlarni ko'rishinigiz mumkin</p>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="150">
+            {% for EachGalary in Galary %}
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <img src="{{ EachGalary.photo.url }}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{ EachGalary.main_title|default:"-" }}</h4>
+                        {% if EachGalary.title is not None %}
+                            <p>{{ EachGalary.title }}</p>
+                        {% endif %}
+
+                        <a href="{{ EachGalary.photo.url }}" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox preview-link" title="{{ EachGalary.message|default:"" }}"><i
+                                class="bx bx-plus"></i></a>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="text-position" data-aos="fade-right" data-aos-delay="100">
+                    <p>Ayni damda hech qanday rasm yo'q</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section><!-- End Portfolio Section -->

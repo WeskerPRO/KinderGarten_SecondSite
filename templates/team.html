@@ -1,0 +1,48 @@
+<section id="team" class="team">  <!--HODIMLAR-->
+    <div class="container">
+        <div class="section-title">
+            <span>Hodimlar</span>
+            <h2>Hodimlar</h2>
+            <p>Bu yerda bog'chaning hodimlarini kuzatishinigiz mumkin.</p>
+        </div>
+
+        <div class="row">
+            {% for EachStaff in Staff %}
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
+                    <div class="member">
+                        <img src="{{ EachStaff.photo.url }}" alt="invalid loading photo">
+                        <h4>{{ EachStaff.main_title }}</h4>
+                        <span>{{ EachStaff.title }}</span>
+                        <p>
+                            {{ EachStaff.info }}
+                        </p>
+
+                        <div class="social">
+                            {% if EachStaff.twitter is not None %}
+                                <a href="{{ EachStaff.twitter }}" target="_blank"><i class="bi bi-twitter"></i></a>
+                            {% endif %}
+
+                            {% if EachStaff.facebook is not None %}
+                                <a href="{{ EachStaff.facebook }}" target="_blank"><i
+                                        class="bi bi-facebook"></i></a>
+                            {% endif %}
+
+                            {% if EachStaff.instagram is not None %}
+                                <a href="{{ EachStaff.instagram }}" target="_blank"><i class="bi bi-instagram"></i></a>
+                            {% endif %}
+
+                            {% if EachStaff.linkedin_box is not None %}
+                                <a href="{{ EachStaff.linkedin_box }}" target="_blank"><i
+                                        class="bi bi-linkedin"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="text-position" data-aos="fade-right" data-aos-delay="100">
+                    <p>Ayni damda hech qanday hodim topilmadi!</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section><!-- End Team Section -->

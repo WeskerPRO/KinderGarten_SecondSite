@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Bolalar-Bog'chasi</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'style/img/Favicon.png' %}" rel="icon">
+    <link href="{% static 'style/img/AppleTouchIcon.png' %}" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'style/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'style/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'style/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'style/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'style/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'style/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'style/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+{% block header %}
+{% include 'header.html' %} 
+{% endblock %}
+
+<!-- ======= Hero Section ======= -->
+{% block hero %}
+{% include 'hero.html' %}
+{% endblock %}
+
+<main id="main">
+    {% block content %}
+    {% include 'content.html' %}
+    {% endblock %}
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'style/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'style/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'style/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'style/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'style/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'style/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'style/js/main.js' %}"></script>
+
+</body>
+
+</html>
