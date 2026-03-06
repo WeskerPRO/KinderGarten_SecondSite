@@ -1,3 +1,5 @@
+{% load static %}
+
 <footer id="footer">
     <div class="footer-top">
         <div class="container">
@@ -48,32 +50,32 @@
                         <h4>Foydali linklar</h4>
 
                         <div class="{% if request.path == '/' %}active-icon{% else %}disactive-icon{% endif %}">
-                            <i class="bx bi-toggle-on"></i>
-                            <strong><a href="{% if request.path == '/' %}#about{% else %}{% url 'about' %}{% endif %}">Bosh sahifa</a></strong>
+                            <i class="{% if request.path == '/' %}bx bi-toggle-on{% else %}bx bi-toggle-off{% endif %}"></i>
+                            <a href="{% if request.path == '/' %}#about{% else %}{% url 'about' %}{% endif %}">Bosh sahifa</a>
                         </div>
                         <br>
 
                         <div class="{% if request.path == '/staff/' %}active-icon{% else %}disactive-icon{% endif %}">
-                            <i class="bx bi-toggle-off"></i>
+                            <i class="{% if request.path == '/staff/' %}bx bi-toggle-on{% else %}bx bi-toggle-off{% endif %}"></i>
                             <a href="{% if request.path == '/staff/' %}#team{% else %}{% url 'staff' %}{% endif %}">Hodimlar</a>
                         </div>
                         <br>
 
                         <div class="{% if request.path == '/news/' %}active-icon{% else %}disactive-icon{% endif %}">
-                            <i class="bx bi-toggle-off"></i>
-                            <a href="{% if request.path == '/news/' %}#news{% else %}{% url 'news' %}"{% endif %}>Yangiliklar</a>
+                            <i class="{% if request.path == '/news/' %}bx bi-toggle-on{% else %}bx bi-toggle-off{% endif %}"></i>
+                            <a href="{% if request.path == '/news/' %}#news{% else %}{% url 'news' %}{% endif %}">Yangiliklar</a>
                         </div>
                         <br>
 
                         <div class="{% if request.path == '/galary/' %}active-icon{% else %}disactive-icon{% endif %}">
-                            <i class="bx bi-toggle-off"></i>
+                            <i class="{% if request.path == '/galary/' %}bx bi-toggle-on{% else %}bx bi-toggle-off{% endif %}"></i>
                             <a href="{% if request.path == '/galary/' %}#portfolio{% else %}{% url 'galary' %}{% endif %}">Gallereya</a>
                         </div>
                         <br>
 
                         <div class="{% if request.path == '/contact/' %}active-icon{% else %}disactive-icon{% endif %}">
-                            <i class="bx bi-toggle-off"></i>
-                            <a href="{% if request.path == '/contact/' %}#footer{% else %}{% url 'contact' %}{% endif %}">Kontakt</a>
+                            <i class="{% if request.path == '/contact/' %}bx bi-toggle-on{% else %}bx bi-toggle-off{% endif %}"></i>
+                            <a href="{% if request.path == '/contact/' %}#contact{% else %}{% url 'contact' %}{% endif %}">Kontakt</a>
                         </div>
                     </div>
                 </div>
